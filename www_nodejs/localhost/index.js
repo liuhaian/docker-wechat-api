@@ -64,7 +64,7 @@ app.get('/wx_server_ouath',xmlparser(), function (req, res) {
     var original = oriArray.join('');
 
     md5sum.update(original);
-    scyptoString = md5sum.digest("hex");
+    var scyptoString = md5sum.digest("hex");
 
     console.log("signature:%s,scyptoString:%s", signature, scyptoString);
     if (signature == scyptoString) {
