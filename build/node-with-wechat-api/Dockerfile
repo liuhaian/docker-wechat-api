@@ -7,4 +7,4 @@ WORKDIR /usr/src/myapp
 
 COPY app.js ./
 
-ENTRYPOINT ['node', 'app']
+ENTRYPOINT ["node","app"]
