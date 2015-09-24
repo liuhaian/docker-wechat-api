@@ -1,0 +1,48 @@
+#mongodb data image
+mongodb_data:
+  image: docker.io/busybox:latest
+  volumes:
+  - ./mongodb_data:/data/db
+
+#mongodb program image
+mongodb_server:
+  image: docker.io/mongo:latest
+  volumes_from:
+  - mongodb_data
+
+#nodejs file image
+www_nodejs: 
+  image: docker.io/busybox:latest
+  volumes:
+  - ./www_nodejs:/usr/src/myapp/host
+
+#nodejs program image
+nodejs:
+  #build: ./build/nodejs
+  image: gzlock/node-with-wechat-api:latest
+  volumes_from:
+  - www_nodejs
+  restart: always
+  links:
+  - mongodb_server:mongodb
+
+#node-with-mongo-express image
+mongo_express:
+  #build: ./build/mongo-express
+  image: gzlock/node-with-mongoexpress:latest
+  restart: always
+  links:
+  - mongodb_server:mongo
+
+#nginx programe image
+nginx:
+  image: docker.io/nginx:latest
+  volumes:
+  - ./nginx_conf:/etc/nginx/conf.d
+  links:
+  # port 8080
+  - nodejs
+  # port 8081
+  - mongo_express
+  ports:
+  - "80:80"
