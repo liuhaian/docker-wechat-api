@@ -3,10 +3,10 @@
 */
 
 var weixin = {
-    token: '159357',
-    appID: 'wxe94e7aaaabaf7a57',
-    appSecret: '780f119408b069f05d4d5eab0599a967',
-    encodingAESKey: '950EjhOFovzbTNRHZbcHpqNEuqL8nBmiSqnd5bhbOeT'
+    token: 'token',
+    appID: 'appID',
+    appSecret: 'appSecret',
+    encodingAESKey: 'encodingAESKey'
 };
 
 /**
