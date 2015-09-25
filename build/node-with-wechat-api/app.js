@@ -31,7 +31,7 @@ var server = http.createServer(function (request, response) {
         }
 
         app = require(indexFile, request, response);
-        app.set('views',__dirname+'/host/'+host+'views');
+        app.set('views',__dirname+'/host/'+host+'/views');
 
         if (!require.cache[indexFile].hasOwnProperty('mtime')) {//add the target file modified time to cache object prototype
             require.cache[indexFile]['mtime'] = getModifiedTime(indexFile);
