@@ -26,7 +26,4 @@ Docker images with:
 ### Config
 - mongo-express account: admin,password: pass
 
-### BTW
-/build/php/Dockerfile come from TommyLau
-
 ### MIT License

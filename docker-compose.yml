@@ -18,7 +18,7 @@ www_nodejs:
 
 #nodejs program image
 nodejs:
-  #build: ./build/nodejs
+  #build: ./build/node-with-wechat-api
   image: gzlock/node-with-wechat-api:latest
   volumes_from:
   - www_nodejs
@@ -28,7 +28,7 @@ nodejs:
 
 #node-with-mongo-express image
 mongo_express:
-  #build: ./build/mongo-express
+  #build: ./build/mnode-with-mongo-express
   image: gzlock/node-with-mongoexpress:latest
   restart: always
   links:

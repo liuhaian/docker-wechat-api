@@ -16,3 +16,8 @@ docker.io/Node:slim with:
 - wechat-crypto
 - wechat-api
 - wechat
+
+### More info
+https://github.com/gzlock/docker-wechat-api
+
+### MIT License
