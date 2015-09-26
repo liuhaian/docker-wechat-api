@@ -36,7 +36,7 @@ mongo_express:
 
 #nginx programe image
 nginx:
-  image: docker.io/nginx:latest
+  image: docker.io/gzlock/nginx:latest
   volumes:
   - ./nginx_conf:/etc/nginx/conf.d
   links:
