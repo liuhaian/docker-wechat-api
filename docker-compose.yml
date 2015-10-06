@@ -9,6 +9,7 @@ mongodb_server:
   image: docker.io/mongo:latest
   volumes_from:
   - mongodb_data
+  log_driver: "none"
 
 #nodejs file image
 www_nodejs: 
@@ -33,6 +34,7 @@ mongo_express:
   restart: always
   links:
   - mongodb_server:mongo
+  log_driver: "none"
 
 #nginx programe image
 nginx:
@@ -46,3 +48,4 @@ nginx:
   - mongo_express
   ports:
   - "80:80"
+  log_driver: "none"
